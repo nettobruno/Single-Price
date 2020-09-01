@@ -1,0 +1,143 @@
+div#container {
+  background-color: hsl(204, 43%, 93%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Definindo os 3 blocos */
+div#content {
+  display: grid;
+  grid-template:
+    'join join' auto
+    'monthly why-us' auto
+    / 1fr 1fr;
+}
+
+
+/* Espaçamento interno de cada um dos 3 blocos */
+div#content div {
+  padding: 30px 25px;
+}
+
+
+div.join {
+  grid-area: join;
+  background-color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div.join h2 {
+  color: hsl(179, 62%, 43%);
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+div.join p.green {
+  color: hsl(71, 73%, 54%);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+div.join p {
+  color: hsl(201, 10%, 74%);
+}
+
+/* Estilização do título dos blocos de monthly e why us */
+h3 {
+  color: white;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+
+div.monthly {
+  grid-area: monthly;
+  background-color: hsl(179, 62%, 43%);
+  border-bottom-left-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div.monthly p {
+  color: white;
+  margin-top: 10px;
+}
+
+div.monthly p.value {
+  color: rgba(255, 255, 255, 0.500);
+}
+
+div.monthly p.value span {
+  color: white;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+div.monthly div.btn {
+  margin-top: 10px;
+}
+
+div.monthly div.btn a {
+  background-color: hsl(71, 73%, 54%);
+  border-radius: 3px;
+  color: white;
+  padding: 10px 80px;
+  text-decoration: none;
+  box-shadow: 2px 2px 5px #808080;
+}
+
+div.why-us {
+  grid-area: why-us;
+  background-color: hsla(179, 62%, 43%, 0.800);
+  border-bottom-right-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div.why-us ul {
+  list-style: none;
+}
+
+div.why-us ul li {
+  color: white;
+  font-size: .8em;
+  margin-top: 5px;
+}
+
+
+
+/* Estilização para dispositivos menores */
+@media screen and (max-width: 768px) {
+  div#container {
+    height: auto;
+  }
+
+  div#content {
+    display: grid;
+    grid-template:
+      'join' 1fr
+      'monthly' 1fr
+      'why-us' 1fr
+      / auto auto auto
+    ;
+    width: 90%;
+    margin-top: 50px;
+  }
+
+  div.monthly {
+    border-bottom-left-radius: 0px;
+  }
+
+  div.why-us {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+}
